@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人简历生成器 · 多模板</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="toolbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <h1>个人简历生成器</h1>
+            <p id="tplDesc">表格型 · 一键导出 Word / PDF</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" id="btnSample">载入示例</button>
+          <button class="btn ghost" id="btnClear">清空</button>
+          <button class="btn ghost" id="btnPdf">导出 PDF</button>
+          <button class="btn primary" id="btnDocx">下载 Word</button>
+        </div>
+      </header>
+
+      <div class="subbar">
+        <div class="tpl-bar" id="tplBar"></div>
+        <div class="theme-row" id="themeRow"></div>
+        <span class="warn" id="docxNote"></span>
+      </div>
+
+      <main class="panes">
+        <section class="form-pane" id="formPane"></section>
+        <section class="preview-pane" id="previewPane">
+          <div class="preview-inner">
+            <div class="overflow-warn" id="overflowWarn">
+              内容超出一页，导出会被分成两页 —— 建议精简文字或删掉部分条目
+            </div>
+            <div class="page-scaler" id="pageScaler">
+              <div class="page" id="page"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 打印/导出 PDF 专用容器：与屏幕布局完全隔离 -->
+    <div id="printRoot" aria-hidden="true"></div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
